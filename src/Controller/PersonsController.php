@@ -38,4 +38,14 @@ class PersonsController extends AppController {
 			$this->set('person', $person);
 		}
 	}
+	public function find() {
+		$this->set('msg', null);
+		$persons = [];
+		if ($this->request->is('post')) {
+			$find = $this->request->data['find'];
+			$persons = $this->Persons->findByName($find);
+		}
+		$this->set('persons', $persons);
+	}
 }
+
