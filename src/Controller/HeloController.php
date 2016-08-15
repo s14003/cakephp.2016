@@ -5,6 +5,9 @@ use App\Controller\AppController;
 
 class HeloController extends AppController
 {
+	public function add() {
+	
+	}
 	public function index() {
 		$str = $this->request->data('text1');
 		$msg = 'typed:' . $str;
